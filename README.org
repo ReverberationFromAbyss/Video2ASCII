@@ -1,0 +1,62 @@
+# -*- org-mode: -*-
+#+title: README
+#+author: reverberationFromAbyss(深渊回响)
+#+email: no email provided
+#+date: May.30, 2024
+
+#+options: toc:2
+
+#+seq_todo: todo(t@) feature(F@) issue(i!/@) wip(w@) fixme(f!/@) knwon(k!/@) | done(d!) canceled(c!/@) abort(a!/@)
+
+* Project: Lottery
+This project is used to translate a video into ASCII frames, in console.
+
+* Content
+#+TOC: tables
+
+* Background
+This project is used to translate a video into ASCII frames, in console.
+For learning OpenCV library.
+
+(I'm from China and is not good at English, feel free to point out my grammar mistakes)
+(Thank you for reading this)
+
+* Goals [6/7]
+
+* WIP issues [%]
+
+* todo Install
+- State "todo"       from              [2024-05-30 Thu 01:30]
+It is not finished yet,
+thus it cannot being installed for now.
+# split
+
+* Usage
+Video2Ascii.exe [options]
++ Options:
+| Short       | Long            | Description                                                                         |
+|-------------+-----------------+-------------------------------------------------------------------------------------|
+| '-f <Path>' | '--file <path>' | File to be processed, if the file is not provided, the camera will be used          |
+|             | '--clearScr'    | Determine wether it is needed to clear screen rather than over-write original frame |
+|             | '--sharp'       | Sharp the frame                                                                     |
+# split
+
+* todo Project Structures
+- State "todo"       from              [2024-05-30 Thu 01:31]
+The project is not organized yet.
+# split
+
+* Stuff
+Just me yet.
+# split
+
+* Contribute
+You may request issues?
+However, I'm still a college student, may have not that times to answer in time.
+# split
+
+* License
+Apache License ver.2. which can be found on `doc' folder with name of `LICENSE.apache'.
+
+Using OpenCV Library, which is Apache License ver.2. Can be found on `doc' folder with name of `LICENSE.OpenCV'.
+Using OpenCV Library, which is MIT 3-clause License. Can be found on `doc' folder with name of `LICENSE.ImTUI.

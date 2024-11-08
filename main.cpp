@@ -99,8 +99,8 @@ cv::Mat Sharper(cv::Mat const &frm) {
 
 void printScr() {}
 
-void mainloop(cv::String fn, std::function<int(void)> clearScr, bool sharp) {
-
+void mainloop(cv::String fn, std::function<int(void)> clearScr, bool sharp,
+              cv::Size resolution = cv::Size(960, 360)) {
   cv::VideoCapture vidc;
   if (fn.empty()) {
     vidc.open(0);
@@ -122,9 +122,11 @@ void mainloop(cv::String fn, std::function<int(void)> clearScr, bool sharp) {
   std::atomic_int cw = 0;
 
   auto clocAscii = [&]() -> void {
-    cv::Size dsize(frm.cols * 0.8, frm.rows * 0.25);
+    // cv::Size dsize(frm.cols * 0.8, frm.rows * 0.25);
+    cv::Size dsize = resolution;
     cv::Mat nf(dsize, CV_8UC3);
-    cv::resize(frm, nf, dsize, 0, 0, cv::INTER_CUBIC);
+    cv::resize(frm, nf, dsize, 0.5, 0.5, cv::INTER_CUBIC);
+
     if (sharp) {
       nf = Sharper(nf);
     }
@@ -165,10 +167,11 @@ void mainloop(cv::String fn, std::function<int(void)> clearScr, bool sharp) {
 
     clearScr();
 
-    std::thread tout(printScr);
+    // std::thread tout(printScr);
     std::thread f(clocAscii);
+    printScr();
 
-    tout.join();
+    // tout.join();
     f.join();
     std::this_thread::sleep_for(std::chrono::milliseconds(20));
 
